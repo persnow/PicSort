@@ -5,8 +5,36 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PicSort"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
+        Title="PicSort" Height="200" Width="525">
     <Grid>
-        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0*"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <ListView Grid.ColumnSpan="2">
+            <TextBlock>Source path :</TextBlock>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="465"></ColumnDefinition>
+                    <ColumnDefinition ></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <TextBox Height="26" Width="507" Grid.Column="0">C:</TextBox>
+                <Button Height="26" Grid.Column="1">Browse</Button>
+            </Grid>
+            <TextBlock Grid.Column="0">Destination path :</TextBlock>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="465"></ColumnDefinition>
+                    <ColumnDefinition ></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <TextBox Height="26" Width="507" Grid.Column="0">D:</TextBox>
+                <Button Height="26" Grid.Column="1">Browse</Button>
+            </Grid>
+
+            <TextBlock>Search pattern :</TextBlock>
+            <TextBox Height="26" Width="507">*.jpg</TextBox>
+            <Button Height="26">Go !</Button>
+        </ListView>
+
     </Grid>
 </Window>

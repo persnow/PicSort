@@ -17,7 +17,7 @@ namespace PicSortLibrary
 
         public static void MovePicture(FileInfo fi, string destination)
         {
-            string destinationFolder = destination + "\\PicSort_" + fi.CreationTime.Year + "_" + fi.CreationTime.Month.ToString("dd");
+            string destinationFolder = destination + "\\PicSort_" + fi.CreationTime.Year + "_" + fi.CreationTime.Month.ToString("D2");
             DirectoryInfo di = new DirectoryInfo(destinationFolder);
             if (!di.Exists)
                 di.Create();
@@ -26,11 +26,12 @@ namespace PicSortLibrary
             {
                 if (newFi.Length == fi.Length)
                 {
-                    // Le fichier existe déjà
+                    // The file already exists
+                    // TODO : Delete or store in garbage folder
                 }
                 else
                 {
-                    // Renommer le fichier
+                    // TODO : Rename the files
                 }
             }
             else
