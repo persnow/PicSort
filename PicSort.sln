@@ -1,0 +1,43 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27004.2010
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PicSort", "PicSort\PicSort.csproj", "{F9B3419D-9B06-42B4-A522-27AD0852E341}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PicSortLibrary", "PicSortLibrary\PicSortLibrary.csproj", "{C7C601A6-29C0-46B7-ABA2-F46B66A5F472}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PicSortConsole", "PicSortConsole\PicSortConsole.csproj", "{1F091614-9E06-4645-8B09-DE0870B26959}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PicSortTest", "PicSortTest\PicSortTest.csproj", "{D604C6B0-6056-4BEA-865C-BAD02DCFBBF5}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F9B3419D-9B06-42B4-A522-27AD0852E341}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F9B3419D-9B06-42B4-A522-27AD0852E341}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F9B3419D-9B06-42B4-A522-27AD0852E341}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F9B3419D-9B06-42B4-A522-27AD0852E341}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C7C601A6-29C0-46B7-ABA2-F46B66A5F472}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C7C601A6-29C0-46B7-ABA2-F46B66A5F472}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C7C601A6-29C0-46B7-ABA2-F46B66A5F472}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C7C601A6-29C0-46B7-ABA2-F46B66A5F472}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1F091614-9E06-4645-8B09-DE0870B26959}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1F091614-9E06-4645-8B09-DE0870B26959}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1F091614-9E06-4645-8B09-DE0870B26959}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1F091614-9E06-4645-8B09-DE0870B26959}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D604C6B0-6056-4BEA-865C-BAD02DCFBBF5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D604C6B0-6056-4BEA-865C-BAD02DCFBBF5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D604C6B0-6056-4BEA-865C-BAD02DCFBBF5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D604C6B0-6056-4BEA-865C-BAD02DCFBBF5}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {52CD7B6D-2DC3-472A-8850-058EC12E8710}
+	EndGlobalSection
+EndGlobal
