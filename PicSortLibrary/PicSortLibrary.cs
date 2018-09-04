@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace PicSortLibrary
 {
-    public static class PicSortLibrary
+    public static class PicSortTools
     {
         public static FileInfo[] ListAllPictures(string path, string searchPattern, bool recursive)
         {
@@ -17,7 +17,8 @@ namespace PicSortLibrary
 
         public static void MovePicture(FileInfo fi, string destination)
         {
-            string destinationFolder = destination + "\\PicSort_" + fi.CreationTime.Year + "_" + fi.CreationTime.Month.ToString("D2");
+            DateTime dt = fi.CreationTime < fi.LastWriteTime ? fi.CreationTime : fi.LastWriteTime;
+            string destinationFolder = destination + "\\PicSort_" + dt.Year + "_" + dt.Month.ToString("D2");
             DirectoryInfo di = new DirectoryInfo(destinationFolder);
             if (!di.Exists)
                 di.Create();
