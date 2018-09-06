@@ -23,19 +23,19 @@ namespace PicSortTest
             string dateFolder = string.Format("PicSort_{0}_{1}", DateTime.Now.Year, DateTime.Now.Month.ToString("D2"));
 
             FileInfo fiDesert = new FileInfo(@".\MovePicture\Desert.jpg");
-            PicSortTools.MovePicture(fiDesert, @".\ResultsPictures");
+            PicSortTools.MovePicture(fiDesert, @".\ResultsPictures", false);
 
             Assert.IsFalse(File.Exists(@".\MovePicture\Desert.jpg"));
             Assert.IsTrue(File.Exists(string.Format(@".\ResultsPictures\{0}\Desert.jpg", dateFolder)));
 
             FileInfo fiKoala = new FileInfo(@".\MovePicture\Koala.jpg");
-            PicSortTools.MovePicture(fiKoala, @".\ResultsPictures");
+            PicSortTools.MovePicture(fiKoala, @".\ResultsPictures", false);
 
             Assert.IsFalse(File.Exists(@".\MovePicture\Koala.jpg"));
             Assert.IsTrue(File.Exists(string.Format(@".\ResultsPictures\{0}\Koala.jpg", dateFolder)));
 
             FileInfo fiPenguins = new FileInfo(@".\MovePicture\Penguins.jpg");
-            PicSortTools.MovePicture(fiPenguins, @".\ResultsPictures");
+            PicSortTools.MovePicture(fiPenguins, @".\ResultsPictures", false);
 
             Assert.IsFalse(File.Exists(@".\MovePicture\Penguins.jpg"));
             Assert.IsTrue(File.Exists(string.Format(@".\ResultsPictures\{0}\Penguins.jpg", dateFolder)));

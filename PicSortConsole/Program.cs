@@ -24,7 +24,7 @@ namespace PicSortConsole
                 int i = 0;
                 foreach (FileInfo f in fi)
                 {
-                    PicSortTools.MovePicture(f, dest);
+                    PicSortTools.MovePicture(f, dest, false);
                     System.Console.WriteLine(string.Format("{0}/{1} - {2} a été traité", ++i, fi.Count(), f.Name));
                 }
             }

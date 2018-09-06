@@ -15,7 +15,7 @@ namespace PicSortLibrary
             return di.GetFiles(searchPattern, recursive ? SearchOption.AllDirectories : SearchOption.TopDirectoryOnly);
         }
 
-        public static void MovePicture(FileInfo fi, string destination)
+        public static void MovePicture(FileInfo fi, string destination, bool keepDuplicates)
         {
             DateTime dt = fi.CreationTime < fi.LastWriteTime ? fi.CreationTime : fi.LastWriteTime;
             string destinationFolder = destination + "\\PicSort_" + dt.Year + "_" + dt.Month.ToString("D2");
@@ -28,7 +28,21 @@ namespace PicSortLibrary
                 if (newFi.Length == fi.Length)
                 {
                     // The file already exists
-                    // TODO : Delete or store in garbage folder
+                    if (keepDuplicates)
+                    {
+                        destinationFolder = destination + "\\PicSort_Garbage";
+                        di = new DirectoryInfo(destinationFolder);
+                        if (!di.Exists)
+                            di.Create();
+                        newFi = new FileInfo(destinationFolder + "\\" + fi.Name);
+                        // TODO : Rename the files if already exists
+                        //string = fi.Name + "(1)" + fi.Extension;
+                        fi.CopyTo(newFi.FullName);
+                    }
+                    else
+                    {
+                        fi.Delete();
+                    }
                 }
                 else
                 {
