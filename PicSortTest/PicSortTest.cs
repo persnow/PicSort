@@ -22,12 +22,14 @@ namespace PicSortTest
             // Because the file copied in the test folder have the current date as modification date
             string dateFolder = string.Format("PicSort_{0}_{1}", DateTime.Now.Year, DateTime.Now.Month.ToString("D2"));
 
+            // The file already exists in the destination folder
             FileInfo fiDesert = new FileInfo(@".\MovePicture\Desert.jpg");
             PicSortTools.MovePicture(fiDesert, @".\ResultsPictures", false);
 
             Assert.IsFalse(File.Exists(@".\MovePicture\Desert.jpg"));
             Assert.IsTrue(File.Exists(string.Format(@".\ResultsPictures\{0}\Desert.jpg", dateFolder)));
 
+            // The file does not exists in the destination folder
             FileInfo fiKoala = new FileInfo(@".\MovePicture\Koala.jpg");
             PicSortTools.MovePicture(fiKoala, @".\ResultsPictures", false);
 

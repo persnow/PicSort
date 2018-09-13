@@ -35,9 +35,12 @@ namespace PicSortLibrary
                         if (!di.Exists)
                             di.Create();
                         newFi = new FileInfo(destinationFolder + "\\" + fi.Name);
-                        // TODO : Rename the files if already exists
-                        //string = fi.Name + "(1)" + fi.Extension;
-                        fi.CopyTo(newFi.FullName);
+                        if (newFi.Exists)
+                        {
+                            RenameAndMove(fi, newFi);
+                        }
+                        else
+                            fi.CopyTo(newFi.FullName);
                     }
                     else
                     {
@@ -46,7 +49,7 @@ namespace PicSortLibrary
                 }
                 else
                 {
-                    // TODO : Rename the files
+                    RenameAndMove(fi, newFi);
                 }
             }
             else
@@ -54,6 +57,15 @@ namespace PicSortLibrary
                 fi.CopyTo(newFi.FullName);
             }
             fi.Delete();
+        }
+
+        public static void RenameAndMove(FileInfo oldFi, FileInfo newFi)
+        {
+            FileInfo fi = new FileInfo(newFi.Name.Insert(newFi.Name.LastIndexOf(".") - 1, "(1)."));
+            if (newFi.Exists)
+                RenameAndMove(oldFi, fi);
+            else
+                oldFi.MoveTo(fi.Name);
         }
     }
 }
