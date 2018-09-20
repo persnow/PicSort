@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace PicSortLibrary
 {
@@ -17,7 +13,7 @@ namespace PicSortLibrary
 
         public static void MovePicture(FileInfo fi, string destination, bool keepDuplicates)
         {
-            DateTime dt = fi.CreationTime < fi.LastWriteTime ? fi.CreationTime : fi.LastWriteTime;
+            DateTime dt = ExifParserLibrary.GetDateTakenOrModified(fi);
             string destinationFolder = destination + "\\PicSort_" + dt.Year + "_" + dt.Month.ToString("D2");
             DirectoryInfo di = new DirectoryInfo(destinationFolder);
             if (!di.Exists)
